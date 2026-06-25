@@ -3,7 +3,7 @@
   realizations="true" associations="true" dependencies="false" nesting-rel="true" router="FAN">  
   <class id="1" language="java" name="com.alkemy.billetera.Principal" project="AlkeWallet" 
     file="/AlkeWallet/src/main/java/com/alkemy/billetera/Principal.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="486" y="272"/>    
+    <position height="-1" width="-1" x="748" y="268"/>    
     <display resize-to-fit="true" stereotype="true" package="true" default-value="false" signature="true" sort="true" 
       accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="false"/>      
@@ -13,7 +13,7 @@
   <interface id="2" language="java" name="com.alkemy.billetera.interfaces.IConvertidorMoneda" project="AlkeWallet" 
     file="/AlkeWallet/src/main/java/com/alkemy/billetera/interfaces/IConvertidorMoneda.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="131" y="89"/>    
+    <position height="-1" width="-1" x="352" y="89"/>    
     <display resize-to-fit="true" stereotype="true" package="true" default-value="false" signature="true" sort="true" 
       accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="false"/>      
@@ -23,7 +23,7 @@
   <interface id="3" language="java" name="com.alkemy.billetera.interfaces.IOperacionesBilletera" project="AlkeWallet" 
     file="/AlkeWallet/src/main/java/com/alkemy/billetera/interfaces/IOperacionesBilletera.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="124" y="230"/>    
+    <position height="-1" width="-1" x="358" y="281"/>    
     <display resize-to-fit="true" stereotype="true" package="true" default-value="false" signature="true" sort="true" 
       accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="false"/>      
@@ -32,7 +32,7 @@
   </interface>  
   <class id="4" language="java" name="com.alkemy.billetera.modelo.Billetera" project="AlkeWallet" 
     file="/AlkeWallet/src/main/java/com/alkemy/billetera/modelo/Billetera.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="485" y="556"/>    
+    <position height="-1" width="-1" x="752" y="551"/>    
     <display resize-to-fit="true" stereotype="true" package="true" default-value="false" signature="true" sort="true" 
       accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="false"/>      
@@ -42,7 +42,7 @@
   <enumeration id="5" language="java" name="com.alkemy.billetera.modelo.TipoTransaccion" project="AlkeWallet" 
     file="/AlkeWallet/src/main/java/com/alkemy/billetera/modelo/TipoTransaccion.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="834" y="206"/>    
+    <position height="-1" width="-1" x="1192" y="133"/>    
     <display resize-to-fit="true" stereotype="true" package="true" default-value="false" signature="true" sort="true" 
       accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="false"/>      
@@ -51,7 +51,7 @@
   </enumeration>  
   <class id="6" language="java" name="com.alkemy.billetera.modelo.Transaccion" project="AlkeWallet" 
     file="/AlkeWallet/src/main/java/com/alkemy/billetera/modelo/Transaccion.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="833" y="530"/>    
+    <position height="-1" width="-1" x="1191" y="564"/>    
     <display resize-to-fit="true" stereotype="true" package="true" default-value="false" signature="true" sort="true" 
       accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="false"/>      
@@ -60,7 +60,7 @@
   </class>  
   <class id="7" language="java" name="com.alkemy.billetera.modelo.Usuario" project="AlkeWallet" 
     file="/AlkeWallet/src/main/java/com/alkemy/billetera/modelo/Usuario.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="115" y="520"/>    
+    <position height="-1" width="-1" x="272" y="571"/>    
     <display resize-to-fit="true" stereotype="true" package="true" default-value="false" signature="true" sort="true" 
       accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="false"/>      
@@ -70,7 +70,7 @@
   <class id="8" language="java" name="com.alkemy.billetera.servicio.ConvertidorMoneda" project="AlkeWallet" 
     file="/AlkeWallet/src/main/java/com/alkemy/billetera/servicio/ConvertidorMoneda.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="485" y="93"/>    
+    <position height="-1" width="-1" x="747" y="90"/>    
     <display resize-to-fit="true" stereotype="true" package="true" default-value="false" signature="true" sort="true" 
       accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="false"/>      
