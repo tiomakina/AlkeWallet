@@ -12,46 +12,64 @@ AlkeWallet/
 ├── pom.xml
 └── src/
     ├── main/java/com/alkemy/billetera/
-    │   ├── Principal.java                            ← Punto de entrada
+    │   ├── Principal.java                            ← Menú interactivo (punto de entrada)
     │   ├── interfaces/
-    │   │   ├── IOperacionesBilletera.java            ← Operaciones de fondos
-    │   │   └── IConvertidorMoneda.java               ← Conversión de monedas
+    │   │   ├── IOperacionesBilletera.java            ← Contrato de operaciones de fondos
+    │   │   └── IConvertidorMoneda.java               ← Contrato de conversión de monedas
     │   ├── modelo/
     │   │   ├── Usuario.java                          ← Entidad usuario
-    │   │   ├── Billetera.java                        ← Billetera (lógica principal)
+    │   │   ├── Billetera.java                        ← Lógica principal de la billetera
     │   │   ├── Transaccion.java                      ← Registro de transacciones
     │   │   └── TipoTransaccion.java                  ← Enum: DEPOSITO, RETIRO, CONVERSION
     │   └── servicio/
     │       └── ConvertidorMoneda.java                ← Servicio de conversión
     └── test/java/com/alkemy/billetera/
-        └── BilleteraTest.java                        ← Pruebas unitarias JUnit 5
+        └── BilleteraTest.java                        ← 23 pruebas unitarias JUnit 5
 ```
 
 ---
 
 ## Funcionalidades implementadas
 
+### Menú interactivo por consola
+Al ejecutar el programa el usuario verá:
+
+```
+========================================
+       AlkeWallet - Menú Principal
+========================================
+  1. Crear cuenta
+  2. Ver saldo
+  3. Depositar dinero
+  4. Retirar dinero
+  5. Convertir moneda
+  6. Ver historial de transacciones
+  0. Salir
+========================================
+  Seleccione una opción:
+```
+
 ### Administración de fondos
-- Crear cuenta (usuario + billetera)
-- Ver saldo disponible (`obtenerSaldo()`)
-- Depositar dinero (`depositar(monto)`) — impacta sobre el saldo
-- Retirar dinero (`retirar(monto)`) — impacta sobre el saldo
-- Historial de transacciones (`imprimirHistorial()`)
+- Crear cuenta con nombre, correo y moneda
+- Ver saldo disponible en tiempo real
+- Depositar dinero — impacta directamente sobre el saldo
+- Retirar dinero — impacta directamente sobre el saldo
+- Ver historial completo de transacciones
 
 ### Conversión de moneda
-- Convertir el saldo de una moneda a otra (`convertirMoneda(destino, convertidor)`)
-- Tasas disponibles por defecto: CLP ↔ USD, CLP ↔ EUR, CLP ↔ UF, USD ↔ EUR, USD ↔ ARS
-- Agregar tasas personalizadas (`agregarTasa(origen, destino, tasa)`)
+- Convertir saldo entre CLP, USD, EUR y UF
+- Tasas actualizables en tiempo de ejecución
 
 ---
 
 ## Tecnologías
 
-| Tecnología  | Detalle                          |
-|-------------|----------------------------------|
-| Java 17     | Paradigma orientado a objetos    |
-| JUnit 5     | Pruebas unitarias                |
-| Maven       | Gestión de dependencias y build  |
+| Tecnología  | Versión | Uso                              |
+|-------------|---------|----------------------------------|
+| Java        | 17 LTS  | Paradigma orientado a objetos    |
+| JUnit 5     | 5.10.0  | Pruebas unitarias (23 pruebas)   |
+| Maven       | 3.8+    | Gestión de dependencias y build  |
+| Eclipse IDE | 2024+   | Entorno de desarrollo            |
 
 ---
 
@@ -61,7 +79,13 @@ AlkeWallet/
 - Java 17+
 - Maven 3.8+
 
-### Compilar y ejecutar
+### Desde Eclipse
+1. `File` → `Import` → `Maven` → `Existing Maven Projects`
+2. Seleccionar la carpeta `AlkeWallet`
+3. Clic derecho en `Principal.java` → `Run As` → `Java Application`
+4. Interactuar con el menú en la consola
+
+### Desde terminal
 ```bash
 mvn compile
 mvn exec:java -Dexec.mainClass="com.alkemy.billetera.Principal"
@@ -72,26 +96,23 @@ mvn exec:java -Dexec.mainClass="com.alkemy.billetera.Principal"
 mvn test
 ```
 
-### Empaquetar
-```bash
-mvn package
-java -jar target/alke-wallet-1.0.0.jar
-```
-
----
-
-## Pruebas unitarias — resumen
-
-| Clase testeada       | Casos cubiertos                                        |
-|----------------------|--------------------------------------------------------|
-| `Billetera`          | Depósito, retiro, saldo, transacciones, excepciones    |
-| `ConvertidorMoneda`  | Tasas, conversión, misma moneda, tasas personalizadas  |
-
-**Total: 20 pruebas unitarias**
-
 ---
 
 ## Interfaces utilizadas
 
-- `IOperacionesBilletera` — define `depositar()`, `retirar()`, `obtenerSaldo()`, implementada por `Billetera`
-- `IConvertidorMoneda` — define `convertir()` y `obtenerTasa()`, implementada por `ConvertidorMoneda`
+- `IOperacionesBilletera` → define `depositar()`, `retirar()`, `obtenerSaldo()` — implementada por `Billetera`
+- `IConvertidorMoneda` → define `convertir()` y `obtenerTasa()` — implementada por `ConvertidorMoneda`
+
+---
+
+## Monedas soportadas
+
+| Desde | Hacia | Tasa referencial |
+|-------|-------|-----------------|
+| CLP   | USD   | 1 / 930         |
+| USD   | CLP   | 930.0           |
+| CLP   | EUR   | 1 / 1010        |
+| EUR   | CLP   | 1010.0          |
+| CLP   | UF    | 1 / 37200       |
+| UF    | CLP   | 37200.0         |
+| USD   | EUR   | 0.92            |
